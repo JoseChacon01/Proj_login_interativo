@@ -1,0 +1,301 @@
+*               /*resert- para que a borda do css pegue toda a pagina em qualquer navegador*/
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*a medida das bordas é contada junto com a largura e aultura, basta inserir um  "border: 2px solid red" caso queira visualizaar a borda */
+}
+
+body
+{
+    font-family: 'Open Sans', sans-serif; /* Fontedo google fontes*/
+}
+
+.container
+{
+    display: flex; /* alinha ou dois conteudos, um ao lado do outro*/
+    justify-content: center; /*centralizou o container*/
+    align-items: center;
+    height: 100vh; /*centralizou o container em todod os lados da agina*/
+    background-color: rgb(183, 230, 231); /*cor de fundo do container*/
+}
+
+/*.segundo-conteudo DEIXEI DESSA FORMA PARA TER UMA NOÇÃO DA SEQUENCIA, O segundo-conteudo foi movido para baixo
+{
+    position: absolute; /Faz com que um conteudo fique por cima do outro/
+                         /como fica um por cima do outro, se torna ruim de trabalhar, essa tag faz com que o "segundo-conteudo" saia, podendo focar melhor no "primeiro-conteudo, depois fazemos o inverso para focar no "segungo-conteudo"/
+    display: flex;
+}*/
+
+
+.primeiro-conteudo
+{
+    display: flex; /*a coluna 1 estava a cima da coluna 2, com essa teg ela fica ao lado*/
+   /* display: none; (Foi tirado tando do primeiro quanto do seginda conteudo ent eles vão se sobrepo) Terminamos de trabalhar com o primeiro conteudo, agoara iremos remover o "display:none" do segundo conteudo para ele aparecer e colocar essa tag no primeiro, para que ele suma e fique melhor de se trabalhar com o segundo*/
+}
+
+.lista-social-midia
+{
+    display: flex; /*seguindo o mesmo macete, faz com que a lista de links das midias fiquem uma ao lado da outra*/
+    list-style-type: none; /*TIRAR O PONTINHO DO LINK*/
+}
+
+.social-midia
+{
+    margin: 2px; /*espaçamento de margem do social-midia entre o titulo e o paragrafo*/
+}
+
+.item-social-midia 
+{
+    border: 1px solid #bdc3c7;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    transition: background-color 0.5s; /*A EXPLICAÇÃO DA TAG SE ENCONTRA DO "bnt-secundario"*/
+}
+                                     /*esta é uma "pseudo class" que significa "no item-social-midia eu não quero que para o meu primeiro elemento (primeiro fllho) seja a tribuida essa margem de 10px (margin-left: 10px), ja os outros podem funcionar*/
+.item-social-midia:not(:first-child) 
+{
+    margin-left: 10px;
+}
+
+.item-social-midia a
+{
+    color: #95a5a9;
+}
+
+.item-social-midia:hover /*quando passa o mause ta ficando verde, porem não esta ficando com os icones brancos e nem com a borda verde*/
+{
+    background-color: rgb(4, 121, 121);
+    color: #fff;
+    border-color:rgb(4, 121, 121) ;
+}
+
+.form
+{
+    display: flex;
+    flex-direction: column; /*com essa propriedade deixamos um abaixo do outro, em formato de coluna*/
+    width: 55%; /*comprimento do formulario*/
+}
+
+.form input
+{
+    width: 100%; /*ocupar 100% da altura disponivel*/
+    height: 45px; /*largura do formulario*/
+    border: none; /*tira a borda do formulario*/
+    background-color: #ecf0f1; /*define uma cor para o formulario*/
+}
+
+.label-input
+{
+    background-color: #ecf0f1;
+    display: flex; /* ao fazer todo procedimento acima e inserir as imagens ("tiradas" do font awesome) dentro do formulario, elas ficaram a cima do formulario e nos queremos elas ao lada, por isso é necessario utilizar o "display flex"*/
+    align-items: center; /* alinhar as imagens mencionadas a cima ao centro*/
+    margin: 8px; /* margem de espaçamento entre os formularios*/
+}
+
+.modific-item
+{
+    color: #95a5a9; /*cor definida para as imagens que contem no formulario, que foram exportadas do font wesome*/
+    padding: 0 5px; /*espaçamento entre a imagem do formulario e a palavra que contem dentro*/
+}
+
+
+.content
+{
+    border-radius: 15px; /*deixa as bordas arredondadas*/
+    background-color: rgb(254, 255, 255); /*define a cor do content*/
+    width: 960px; /*largura*/
+    height: 50%; /*altura*/
+   justify-content: space-between; /*deixou as duas colunas separadas (distantes uma da outra) */
+   align-items: center; /* centralizou as colunas que contem dentro de "content"*/
+   position: relative; /* necessario para que a cor "aqua" selecionada abaixo ocupe uma posição relativa do "content" e não toda a pagina*/
+}
+
+ /* "before" é um Pseudo-elemento - Pseudo-elementos são regras de CSS que ao serem adicionadas a um elemento presente na página vão adicionar estilo ao que o 
+ pseudo-elemento se refere Por exemplo: O pseudo-elemento ::after ao ser atrelado a uma tag já existente na página, cria um elemento novo após este primeiro
+Então podemos dizer que a função do pseudo-elemento é ajudar a estilizar o HTML sem termos que criar novos elementos ou fazer alguma gambiarra com HTML ou CSS. O Pseudo-elemento
+foi definido para class "content" pois ela esta presente tanto no primeiro quanto no segundo conteudo*/
+.content::before
+{
+    content: ""; /* Usa-se essa tag em branco para definir o pseudo-elemento, que nesse caso é o "bfore"*/
+    position: absolute; /* atribuir para o "before" um posicionamento absoluto da cor selecionada*/
+    background-color: rgb(4, 121, 121);
+    width: 40%; /* a cor selecionada ocupara 40% de largura e 100% de altura do "content"*/
+    height: 100%; 
+    border-top-left-radius: 15px; /*esse comando significa "altera a borda de cima, do lado esquerdo e deixa-la redondada a 15px/*/
+    border-bottom-left-radius: 15px;
+
+
+
+    left:0; /*para que o conteudo vá totalmente para esquerda*/
+}
+
+.primeiro-conteudo .segunda-coluna /*primeira coluna do segundo conteudo*/
+{
+    z-index: 12; /*como os conteudos estão 1 sobre o outro e as tags "primeira-culuna" e "segunda-coluna" serve para os dois conteudos, é necessarios especificar que nos queremos a segunda coluna do primeiro conteudo por cima da do segundo conteudo- o motivo de se colocar 12 é que precisa ser maior que 10, que o o valor do outro z-index*/
+}
+
+.primeira-coluna
+{
+    text-align: center;
+    width: 40%; /*anteriormente definimos que a parte onde fica os conteudos, denominada "content" deve ter 15px. Ja agora, com essa tag, definimos que a "primeira-coluna" vai ocurar um espaço de 40%, ja a "segunda-coluna" um espaço de 60%, totalizando 100% da area do content*/
+    z-index: 10; /* tag necessaria para que o conteudo escrito da primeira coluna fique a frente (sobre) a cor aqua, selecionada acima*/
+}
+
+.segunda-coluna
+{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo  /*estamos modificando os titulos colunas*/
+{
+    
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize; /*essa tag pega as primeiras letras das palavras do titulo e coloca em caixa alta*/
+}
+
+.titulo-cor-primaria /* A descrição disso esta na "pagina_login.html"*/
+{
+    color: #fff;
+}
+
+.titulo-cor-secundaria
+{
+    color:rgb(4, 121, 121);
+}
+
+.descricao
+{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px; /*Altura de linha*/
+}
+
+.descricao-primaria
+{
+    color: #fff;
+}
+
+.descricao-secundaria
+{
+    color: #95a5a9;
+}
+
+.bnt /*class dos botões- serve para todos*/
+{
+    border-radius: 15px; /*Deixa os botões com as bordas arredondadas*/
+    text-transform: uppercase; /*Deixa maior e maiusculo*/
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px; /*10px pra cima e 10px para baixo - 50px para o lado direito e 50px para o lado esquerdo*/
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none; /*tira a borda do botão*/
+}
+
+.bnt-primario 
+{
+    background-color: transparent; /*deix o botão transparente*/
+    border: 1px solid #fff; /*Definil para esse botão uma borda de 1px solida e branca*/
+    transition: background-color 0.5s; /*Essa é uma teg de transição, nos tinhamos definido que o "bnt-secundario" ira ser verde e ao passar o mause por cima ele deve ficar branco. COM ESSA TAG NÓS DEFINIMOS O TEMPO DE TRANSIÇÃO DO VERDE PARA O BRANCO, QUE NESSE CASO FI DEFINIDA UM TEMPO DE O.5 Segundo.*/
+}
+
+.bnt-primario:hover /* o "hover" significa Efeitos de transições ao passar o mouse, que nesse caso o "background" ira ficar branco e a fonte ira ficar verde ao passar o mause*/
+{
+    background-color: #fff;
+    color: rgb(4, 121, 121);;
+}
+
+.bnt-secundario
+{
+    background-color:rgb(4, 121, 121); 
+    border: 1px solid rgb(4, 121, 121);
+    transition: background-color 0.5s;
+}
+
+.bnt-secundario:hover
+{
+    background-color: #fff;
+    border: 1px solid rgb(4, 121, 121);
+    color: rgb(4, 121, 121);
+}
+
+
+/*TRABALHANDO O SEGUNDO CONTEUDO*/
+.segundo-conteudo 
+{
+    position: absolute; /*Faz com que um conteudo fique por cima do outro*/
+                        
+    display: flex;
+}
+
+.segundo-conteudo .primeira-coluna
+{
+    order: 2;
+    z-index: -1; /*Essa tag com o valor positivo serve para colocar o conteudo na frente do outro e negativo o conteudo fica por trás, que nesse caso a primeira e segunda coluna do segundondo conteudo devem ficar por tras do primeiro conteudo*/
+}
+                                       /*neste caso, nos envertemos a ardem das colunas no conteudo*/
+.segundo-conteudo .segunda-coluna
+{
+    order: 1;
+    z-index: -1;
+}
+
+.recuperar-senha
+{
+   color:  rgb(4, 121, 121); /*cor do link*/
+   font-size: 13px; /*tamanho do linkqfont*/
+   margin: 15px 0; /*margem de 15px a cima e 0 dos lados*/
+   text-align: center;
+}
+
+/*TRABALHANDO A TRANSIÇÃO DE PASTAS*/
+
+.acessar-js .primeiro-conteudo .primeira-coluna,  /*quando o botão "acessar" for acionado, a primeira e segunda coluna do preimeiro-conteudo irão sumir*/
+.acessar-js .primeiro-conteudo .segunda-coluna
+{
+    z-index: -1;
+}
+
+.acessar-js .segundo-conteudo .primeira-coluna, /* Ao clicar no botão "acessar" ira sumir a primeira e segunda coluna do preimeiro conteudo e aparacer a primeira e segunda coluna do segundo-conteudo*/
+.acessar-js .segundo-conteudo .segunda-coluna
+{
+    z-index: 11;
+}
+
+.acessar-js .content::before /* quando tiver o "acessar" o "content::before tera um left de 60%*/
+{
+    left: 60%;
+    border-top-left-radius: 0;  /*essas duas tags referem-se as bordas do lado esquerdo da area verde, a de sima e a de baixo, dando a elas um arredondamento de 0px- sem arredondamento*/
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;       /*essas duas tags referem-se as bordas do lado direito, a de sima e a de baixo, dando a elas um arredondamento de 15px*/
+    border-bottom-right-radius: 15px;
+}
+
+.inscrever-js .segundo-conteudo .primeira-coluna, /*segue a mesma logica dos anteriores*/
+.inscrever-js .segundo-conteudo .segunda-coluna 
+{
+    z-index: -1;
+}
+
+.inscrever-js .primeiro-conteudo .primeira-coluna,       
+.inscrever-js .primeiro-conteudo .segunda-coluna
+{
+    z-index: 11;
+}
+
+
+
+
+
+
+
+

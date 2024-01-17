@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de login</title>
+    <link rel="stylesheet" type="text/css" href="estilo_login.css"/>
+    <script src="https://kit.fontawesome.com/a2eb5966af.js" crossorigin="anonymous"></script> <!--link para exportar forma (imagem) do site "font wesome"-->
+</head>
+<body> 
+    <div class="container">
+        <div class="content primeiro-conteudo"> <!--primeiro conteudo pagina cadastro--> 
+            <div class="primeira-coluna">
+                <h2 class="titulo titulo-cor-primaria">Bem-vindo novamente!</h2> <!--foi necessario colocar este sub complemento no titulo da primeira coluna do primeiro conteudo, para que as aiterações adicionadas a class "titulo" fiquem a todas, exeto a coloração branca, que deve ficar apenas nesse-->
+                <p class="descricao descricao-primaria">Por favor, faça o logim com suas informações pessoais</p>
+                <p class="descricao descricao-primaria">Para darmos inicio.</p>
+                <button id="acessar" class="bnt bnt-primario"> Acessar</button> <!--Segue a mesma logica da clss "content" a cima-->
+            </div>
+
+            <div class="segunda-coluna">
+                <h2 class="titulo titulo-cor-secundaria">Criar conta</h2> <!---segue a mesma logica do titulo da primeira coluna-->
+                <div class="social-midia"> <!--lista de links para login com outras contas-->
+                    <ul class="lista-social-midia">                   <!--para criar diretamente, foi usado "ul>li*3>a"-->
+                        <li class="item-social-midia"><a href="#"><i class="fab fa-facebook-f"></i></a></li> 
+                        <li class="item-social-midia"><a href="#"><i class="fab fa-google-plus-g"></i></a></li> <!--foi definido essas "class" em cada "li" para se trabalhar melhor no CSS-->
+                        <li class="item-social-midia"><a href="#"><i class="fab fa-linkedin-in"></i></a></li> <!--Este "i class" refere-se a imagem que esta no lugar do link e foi importada do font wesome-->
+                    </ul>
+                </div> 
+                <p class="descricao descricao-secundaria">Ou utilize seu e-mail para o registro:</p>
+                <form class="form">
+                    <label class="label-input" for="">           <!--foi necessario colocar uma class entre os formularios para que seja possivel colocar uma imagem exportada do font wesome dentro dos formularios-->
+                        <i class="far fa-user modific-item"></i>              <!--foi criada essa "sub class" (modific-item) no icone para trabalhar melhor com eles na estilização CSS-->
+                        <input type="text" placeholder="Nome"> 
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope modific-item"></i>
+                        <input type="email" placeholder="E-mail">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock modific-item"></i>
+                        <input type="password" placeholder="Senha"> 
+                    </label>
+                   
+                    <button class="bnt bnt-secundario"> Enviar</button>
+                </form>
+            </div> 
+        </div>
+
+        <div class="content segundo-conteudo"> <!--segundo conteudo- pagina login-->
+            <div class="primeira-coluna">
+                <h2 class="titulo titulo-cor-primaria">Olá, amigo!</h2>
+                <p class="descricao descricao-primaria">Cadastre seus dados pessoais</p>
+                <p class="descricao descricao-primaria">Para se conectar</p>
+                <button id="inscrever" class="bnt bnt-primario"> Inscrever</button>
+            </div>
+
+            <div class="segunda-coluna">
+                <h2 class="titulo titulo-cor-secundaria">Entrar em minha conta</h2>
+                <div class="social-midia"> <!--lista de links para login com outras contas-->
+                    <ul class="lista-social-midia">                   <!--para criar diretamente, foi usado "ul>li*3>a"-->
+                        <li class="item-social-midia"><a href="#"><i class="fab fa-facebook-f"></i></a></li> 
+                        <li class="item-social-midia"><a href="#"><i class="fab fa-google-plus-g"></i></a></li> <!--foi definido essas "class" em cada "li" para se trabalhar melhor no CSS-->
+                        <li class="item-social-midia"><a href="#"><i class="fab fa-linkedin-in"></i></a></li> <!--Este "i class" refere-se a imagem que esta no lugar do link e foi importada do font wesome-->
+                    </ul>
+                </div> 
+                <p class="descricao descricao-secundaria">Utilize seu e-mail para entrar:</p>
+                <form class="form">
+                   
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope modific-item"></i>
+                        <input type="email" placeholder="E-mail">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock modific-item"></i>
+                        <input type="password" placeholder="Senha"> 
+                    </label>
+
+                    <a class="recuperar-senha" href="#">Recuperar senha</a>
+                   
+                    <button class="bnt bnt-secundario"> Entrar</button>
+                </form>
+            </div> 
+        </div>
+   
+    </div>
+
+    <script src="js/app.js"></script> <!--inserindo o documento javascript-->
+</body>
+</html>
